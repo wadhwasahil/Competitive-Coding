@@ -1,0 +1,7 @@
+Let far[i] be the last index j such that S[i,j] has at most K 0s and at most K 1s. Then for a given query (L,R), the number of valid strings starting at index i is min(R,far[i])−i+1 (for L≤i≤R). Therefore, the answer for the query (L,R) is the following:
+∑i=LR(min(R,far[i])−i+1)
+Note that far[i] never decreases, so we can use binary search to find the maximum index k such that far[i]≤R. The sum then becomes:
+∑i=Lk(far[i]−i+1)+∑i=k+1R(R−i+1)
+Each of these is solvable in closed form, except possibly for range sums of far[i]. But for that, we can simply compute cumulative sums of far[i].
+
+The algorithm runs in O(N+QlogN), but can be sped up to O(N+Q) by getting rid of binary search. We'll describe this below.
