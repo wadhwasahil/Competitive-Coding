@@ -1,1 +1,15 @@
+See the questions lies on the following observation.
+Given n , l and r.
 
+Let x=l-r+1
+a[i]=no of non decreasing subsequences of length i 
+it can be figured out that a[i]=(x+i-1)Ci
+where nCr is also termed as n selects r.
+So overall is :
+
+F(n)=a[1]+a[2]+a[3]+a[4]...+a[n]=(x)C1 + (x+1)C2 + ........  (x+n-1)Cn 
+
+using hockey stick theorem, it can be reduced to F(n)=(n+x+1)Cn - 1 
+
+For further reading , see this.
+http://discuss.codechef.com/questions/67643/cseq-editorial
