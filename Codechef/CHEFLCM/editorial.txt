@@ -1,0 +1,11 @@
+As N is LCM of all the numbers, all of them will be divisors of N. As each divisor can occur only once, the answer will be sum of all the divisors of N.
+
+Subtask 1
+
+As N <= 10^5, we can iterate through each i from 1 to N and add all divisors. Complexity is O(N) per test case.
+
+Subtask 2
+
+We can observe that for each pair of divisors (p, q), such that p * q = N, either p <= sqrt(N) or q <= sqrt(N), else p * q will be greater than N. Also we can check that for each divisor p, there exists a distinct q such that p * q = N.
+
+Without loss of generality let us assume p <= q. We can iterate for each p from 1 to sqrt(N) and if p is a divisor of N, then add both p and N / p to the answer. Complexity is O(sqrt(N)) per test case.
