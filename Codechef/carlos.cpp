@@ -42,6 +42,7 @@ while(t--){
     ans>1e8?cout<<-1:cout<<ans;
     cout<<endl;
 }
+
 return 0;
 }
  
